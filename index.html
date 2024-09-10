@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- link para iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+    <!-- link para iconos -->
+
+    <!-- link para bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- link para bootstrap -->
+
+    <title>payment example</title>
+</head>
+<style>
+    body {
+        background-color: #dfe4f4;
+    }
+
+    .card-header {
+        background: #709eee;
+    }
+</style>
+
+<body>
+    <div class="row justify-content-center mt-5">
+        <div class="col-md-10 offset">
+
+            <div class="card card-outline-secondary">
+                <div class="card-header">
+                    <h3 class="mb-0">Payment form example!</h3>
+                </div>
+                <div class="card-body">
+                    <div id="error-msg" class="alert alert-danger">Some fields are missing</div>
+                    <form method="post" action="#">
+                        <div class="row mt-4">
+                            <div class="col-sm-5 pb-3">
+                                <label for="Account">Card #</label>
+                                <input class="form-control" id="Account" placeholder="XXXXXXXXXXXXXXXX" type="text"
+                                    maxlength="16">
+                            </div>
+                            <div class="col-sm-3 pb-3">
+                                <label for="Ctrl">CVC #</label>
+                                <input class="form-control" id="Ctrl" placeholder="0000" type="text" maxlength="4">
+                            </div>
+                            <div class="col-sm-4 pb-3">
+                                <label for="Amount">Amount</label>
+                                <div class="input-group">
+                                    <div class="input-group-addon">
+                                        <i class="fas fa-dollar-sign m-2"></i>
+                                    </div>
+                                    <input class="form-control rounded-2" id="Amount" placeholder="Amount"
+                                        type="number">
+                                </div>
+                            </div>
+                            <div class="col-sm-6 pb-3">
+                                <label for="First">First Name</label>
+                                <input class="form-control" id="First" type="text">
+                            </div>
+                            <div class="col-sm-6 pb-3">
+                                <label for="Last">Last Name</label>
+                                <input class="form-control" id="Last" type="text">
+                            </div>
+                            <div class="col-sm-2 pb-3">
+                                <label for="City">Country</label> <input class="form-control" id="City" type="text">
+                            </div>
+                            <div class="col-sm-4 pb-3">
+                                <label for="City">City</label> <select class="form-control custom-select" id="City">
+                                    <option class="text-white bg-warning">
+                                        Pick a city
+                                    </option>
+                                    <option value="Valladolid">Valladolid</option>
+                                    <option value="Avila">Avila</option>
+                                    <option value="Leon">Leon</option>
+                                    <option value="Segovia">Segovia</option>
+                                    <option value="Soria">Soria</option>
+                                    <option value="Madrid">Madrid</option>
+                                    <option value="Barcelona">Barcelona</option>
+                                    <option value="Lugo">Lugo</option>
+                                    <option value="Santander">Santander</option>
+                                    <option value="Guadalajara">Guadalajara</option>
+                                    <option value="Ceuta">Ceuta</option>
+                                    <option value="Melilla">Melilla</option>
+                                    </option>
+                                </select>
+                            </div>
+                            <div class="col-sm-4 pb-3">
+                                <label for="State">State</label> <select class="form-control custom-select" id="State">
+                                    <option class="text-white bg-warning">
+                                        Pick a state
+                                    </option>
+                                    <option value="CASTILLA Y LEON">CASTILLA Y LEON</option>
+                                    <option value="MADRID">MADRID</option>
+                                    <option value="CATALUÑA">CATALUÑA</option>
+                                    <option value="ASTURIAS">ASTURIAS</option>
+                                    <option value="MURCIA">MURCIA</option>
+                                    <option value="EXTREMADURA">EXTREMADURA</option>
+                                    <option value="ANDALUCIA">ANDALUCIA</option>
+                                    <option value="GALICIA">GALICIA</option>
+                                    <option value="SANTANDER">SANTANDER</option>
+                                    <option value="CASTILLA LA MANCHA">CASTILA LA MANCHA</option>
+                                    <option value="CEUTA">CEUTA</option>
+                                    <option value="MELILLA">MELILLA</option>
+                                    </option>
+                                </select>
+                            </div>
+                            <div class="col-sm-2 pb-3">
+                                <label for="Zip">Postal Code</label>
+                                <input class="form-control" id="Zip" type="text" maxlength="5">
+                            </div>
+                            <div class="col-md-6 pb-3">
+                                <p for="Account">We accept:</p>
+                                <div class="btn-group" data-toggle="buttons">
+                                    <label class="btn btn-secondary">
+                                        <input autocomplete="off" checked id="blue" name="options" type="radio">
+                                        <i class="fab fa-cc-mastercard"></i>
+                                    </label>
+                                    <label class="btn btn-secondary">
+                                        <input autocomplete="off" id="red" name="options" type="radio">
+                                        <i class="fab fa-cc-visa"></i>
+                                    </label>
+                                    <label class="btn btn-secondary">
+                                        <input autocomplete="off" id="green" name="options" type="radio">
+                                        <i class="fab fa-cc-diners-club"></i>
+                                    </label>
+                                    <label class="btn btn-secondary">
+                                        <input autocomplete="off" id="yellow" name="options" type="radio">
+                                        <i class="fab fa-cc-amex"></i>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-md-6 pb-3">
+                                <label for="Message">Message</label>
+                                <textarea class="form-control" id="complexMessage" rows="3" type="text"
+                                    maxlength="200"></textarea>
+                                <small class="text-muted">Add any notes here (Max. 200 char.)</small>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="card-footer text-body-secondary d-flex justify-content-end">
+                    <button class="btn btn-secondary m-2" type="reset">Cancel</button>
+                    <button id="sendForm" class="btn btn-primary m-2" type="button" />Send</button>
+                </div>
+            </div>
+        </div>
+        <!-- script para bootstrap -->
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+            integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+            crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+            integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+            crossorigin="anonymous"></script>
+        <!-- script para bootstrap -->
+
+</body>
+
+</html>
